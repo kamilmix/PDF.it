@@ -9,7 +9,7 @@ namespace PDF.it.Utils
 {
     public static class  FileHelper
     {
-        public static string OpenGetFileDialog()
+        public static string GetFile()
         {
             var filePath = string.Empty;
             using (OpenFileDialog openFileDialog = new OpenFileDialog())

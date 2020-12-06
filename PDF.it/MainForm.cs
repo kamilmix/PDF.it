@@ -1,13 +1,5 @@
-﻿using iText.Kernel.Pdf;
-using PDF.it.Utils;
+﻿using PDF.it.Utils;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PDF.it
@@ -21,7 +13,7 @@ namespace PDF.it
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var filePath = FileHelper.OpenGetFileDialog();
+            var filePath = FileHelper.GetFile();
             PdfHelper.SplitPdf(filePath);     
         }  
  
