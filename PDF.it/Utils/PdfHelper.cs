@@ -20,6 +20,10 @@ namespace PDF.it.Utils
             {
                 outputDir = System.IO.Path.GetDirectoryName(filePath) + "\\";
             }
+            else
+            {
+                outputDir += "\\";
+            }
 
             using (var pdfDoc = new PdfDocument(new PdfReader(filePath)))
             {

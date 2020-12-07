@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace PDF.it.Utils
 {
-    public static class  FileHelper
+    public static class FileHelper
     {
         public static string GetFile()
         {
@@ -26,6 +26,20 @@ namespace PDF.it.Utils
                 }
             }
             return filePath;
+        }
+
+        public static string GetFolder()
+        {
+            using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
+            {
+                DialogResult result = folderBrowserDialog.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(folderBrowserDialog.SelectedPath))
+                {
+                    return folderBrowserDialog.SelectedPath;
+                }
+            }
+            return string.Empty;
         }
     }
 }

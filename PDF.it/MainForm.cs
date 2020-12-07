@@ -12,10 +12,20 @@ namespace PDF.it
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {   
+            PdfHelper.SplitPdf(textBoxSourceFile.Text, textBoxDestinationFolder.Text);     
+        }
+
+        private void buttonBrowseDestinationFolder_Click(object sender, EventArgs e)
+        {
+            var folderPath = FileHelper.GetFolder();
+            textBoxDestinationFolder.Text = folderPath;
+        }
+
+        private void button_Click(object sender, EventArgs e)
         {
             var filePath = FileHelper.GetFile();
-            PdfHelper.SplitPdf(filePath);     
-        }  
- 
+            textBoxSourceFile.Text = filePath;
+        }
     }
 }
