@@ -1,4 +1,5 @@
 ﻿using iText.Kernel.Pdf;
+using iText.Kernel.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,10 +21,6 @@ namespace PDF.it.Utils
             {
                 outputDir = System.IO.Path.GetDirectoryName(filePath) + "\\";
             }
-            else
-            {
-                outputDir += "\\";
-            }
 
             using (var pdfDoc = new PdfDocument(new PdfReader(filePath)))
             {
@@ -35,7 +32,21 @@ namespace PDF.it.Utils
                     splittedDoc.Close();
                 }
             }
+        }
 
+        public static void MergePdf(string[] files, string outputDir)
+        {
+            PdfDocument outputPdf = new PdfDocument(new PdfWriter(outputDir + "mergeDocument1.pdf"));
+            PdfMerger merger = new PdfMerger(outputPdf);
+
+            foreach (string file in files)
+            {
+                PdfDocument pdfDocument = new PdfDocument(new PdfReader(file));
+                merger.Merge(pdfDocument, 1, pdfDocument.GetNumberOfPages());
+                pdfDocument.Close();
+
+            }
+            outputPdf.Close();
         }
     }
 }
