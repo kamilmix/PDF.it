@@ -32,6 +32,7 @@ namespace PDF.it.Utils
                     splittedDoc.Close();
                 }
             }
+            OpenFolderInExplorer(outputDir);
         }
 
         public static void MergePdf(string[] files, string outputDir)
@@ -47,6 +48,12 @@ namespace PDF.it.Utils
 
             }
             outputPdf.Close();
+            OpenFolderInExplorer(outputDir);
+        }
+
+        private static void OpenFolderInExplorer(string path)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", path);
         }
     }
 }
