@@ -29,93 +29,142 @@
         private void InitializeComponent()
         {
             this.panelSplit = new System.Windows.Forms.Panel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button = new System.Windows.Forms.Button();
-            this.textBoxSourceFile = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonBrowseDestinationFolder = new System.Windows.Forms.Button();
-            this.textBoxDestinationFolder = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.buttonMerge = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.buttonBrowse = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.textBoxDestinationFolder = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.button = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.textBoxSourceFile = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.panelSplit.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSplit
             // 
-            this.panelSplit.Controls.Add(this.groupBox2);
-            this.panelSplit.Controls.Add(this.groupBox1);
-            this.panelSplit.Controls.Add(this.button1);
-            this.panelSplit.Location = new System.Drawing.Point(3, 3);
+            this.panelSplit.Controls.Add(this.button);
+            this.panelSplit.Controls.Add(this.textBoxSourceFile);
+            this.panelSplit.Controls.Add(this.buttonMerge);
+            this.panelSplit.Controls.Add(this.buttonBrowse);
+            this.panelSplit.Controls.Add(this.textBoxDestinationFolder);
+            this.panelSplit.Controls.Add(this.materialLabel3);
+            this.panelSplit.Controls.Add(this.materialLabel2);
+            this.panelSplit.Controls.Add(this.materialLabel1);
+            this.panelSplit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelSplit.Location = new System.Drawing.Point(0, 0);
             this.panelSplit.Name = "panelSplit";
-            this.panelSplit.Size = new System.Drawing.Size(644, 422);
+            this.panelSplit.Size = new System.Drawing.Size(640, 422);
             this.panelSplit.TabIndex = 4;
             // 
-            // groupBox2
+            // materialLabel1
             // 
-            this.groupBox2.Controls.Add(this.button);
-            this.groupBox2.Controls.Add(this.textBoxSourceFile);
-            this.groupBox2.Location = new System.Drawing.Point(6, 192);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(626, 100);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Wybierz plik";
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(21, 9);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(89, 19);
+            this.materialLabel1.TabIndex = 4;
+            this.materialLabel1.Text = "Podziel PDF";
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(18, 178);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(89, 19);
+            this.materialLabel2.TabIndex = 5;
+            this.materialLabel2.Text = "Wybierz plik";
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(18, 319);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(128, 19);
+            this.materialLabel3.TabIndex = 6;
+            this.materialLabel3.Text = "Katalog docelowy";
+            // 
+            // buttonMerge
+            // 
+            this.buttonMerge.Depth = 0;
+            this.buttonMerge.Location = new System.Drawing.Point(214, 379);
+            this.buttonMerge.MouseState = MaterialSkin.MouseState.HOVER;
+            this.buttonMerge.Name = "buttonMerge";
+            this.buttonMerge.Primary = true;
+            this.buttonMerge.Size = new System.Drawing.Size(209, 34);
+            this.buttonMerge.TabIndex = 9;
+            this.buttonMerge.Text = "Start";
+            this.buttonMerge.UseVisualStyleBackColor = true;
+            this.buttonMerge.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buttonBrowse
+            // 
+            this.buttonBrowse.Depth = 0;
+            this.buttonBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonBrowse.Location = new System.Drawing.Point(526, 335);
+            this.buttonBrowse.MouseState = MaterialSkin.MouseState.HOVER;
+            this.buttonBrowse.Name = "buttonBrowse";
+            this.buttonBrowse.Primary = true;
+            this.buttonBrowse.Size = new System.Drawing.Size(101, 35);
+            this.buttonBrowse.TabIndex = 8;
+            this.buttonBrowse.Text = "Przeglądaj";
+            this.buttonBrowse.UseVisualStyleBackColor = true;
+            this.buttonBrowse.Click += new System.EventHandler(this.buttonBrowseDestinationFolder_Click);
+            // 
+            // textBoxDestinationFolder
+            // 
+            this.textBoxDestinationFolder.Depth = 0;
+            this.textBoxDestinationFolder.Hint = "C:\\";
+            this.textBoxDestinationFolder.Location = new System.Drawing.Point(25, 341);
+            this.textBoxDestinationFolder.MouseState = MaterialSkin.MouseState.HOVER;
+            this.textBoxDestinationFolder.Name = "textBoxDestinationFolder";
+            this.textBoxDestinationFolder.PasswordChar = '\0';
+            this.textBoxDestinationFolder.SelectedText = "";
+            this.textBoxDestinationFolder.SelectionLength = 0;
+            this.textBoxDestinationFolder.SelectionStart = 0;
+            this.textBoxDestinationFolder.Size = new System.Drawing.Size(474, 23);
+            this.textBoxDestinationFolder.TabIndex = 7;
+            this.textBoxDestinationFolder.UseSystemPasswordChar = false;
             // 
             // button
             // 
-            this.button.Location = new System.Drawing.Point(510, 18);
+            this.button.Depth = 0;
+            this.button.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button.Location = new System.Drawing.Point(526, 194);
+            this.button.MouseState = MaterialSkin.MouseState.HOVER;
             this.button.Name = "button";
-            this.button.Size = new System.Drawing.Size(75, 23);
-            this.button.TabIndex = 1;
+            this.button.Primary = true;
+            this.button.Size = new System.Drawing.Size(101, 35);
+            this.button.TabIndex = 11;
             this.button.Text = "Przeglądaj";
             this.button.UseVisualStyleBackColor = true;
             this.button.Click += new System.EventHandler(this.button_Click);
             // 
             // textBoxSourceFile
             // 
-            this.textBoxSourceFile.Location = new System.Drawing.Point(7, 20);
+            this.textBoxSourceFile.Depth = 0;
+            this.textBoxSourceFile.Hint = "C:\\";
+            this.textBoxSourceFile.Location = new System.Drawing.Point(25, 200);
+            this.textBoxSourceFile.MouseState = MaterialSkin.MouseState.HOVER;
             this.textBoxSourceFile.Name = "textBoxSourceFile";
-            this.textBoxSourceFile.Size = new System.Drawing.Size(497, 20);
-            this.textBoxSourceFile.TabIndex = 0;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.buttonBrowseDestinationFolder);
-            this.groupBox1.Controls.Add(this.textBoxDestinationFolder);
-            this.groupBox1.Location = new System.Drawing.Point(6, 298);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(626, 73);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Katalog docelowy";
-            // 
-            // buttonBrowseDestinationFolder
-            // 
-            this.buttonBrowseDestinationFolder.Location = new System.Drawing.Point(516, 30);
-            this.buttonBrowseDestinationFolder.Name = "buttonBrowseDestinationFolder";
-            this.buttonBrowseDestinationFolder.Size = new System.Drawing.Size(75, 23);
-            this.buttonBrowseDestinationFolder.TabIndex = 2;
-            this.buttonBrowseDestinationFolder.Text = "Przeglądaj";
-            this.buttonBrowseDestinationFolder.UseVisualStyleBackColor = true;
-            this.buttonBrowseDestinationFolder.Click += new System.EventHandler(this.buttonBrowseDestinationFolder_Click);
-            // 
-            // textBoxDestinationFolder
-            // 
-            this.textBoxDestinationFolder.Location = new System.Drawing.Point(6, 32);
-            this.textBoxDestinationFolder.Name = "textBoxDestinationFolder";
-            this.textBoxDestinationFolder.Size = new System.Drawing.Size(504, 20);
-            this.textBoxDestinationFolder.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(12, 387);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Start";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.textBoxSourceFile.PasswordChar = '\0';
+            this.textBoxSourceFile.SelectedText = "";
+            this.textBoxSourceFile.SelectionLength = 0;
+            this.textBoxSourceFile.SelectionStart = 0;
+            this.textBoxSourceFile.Size = new System.Drawing.Size(474, 23);
+            this.textBoxSourceFile.TabIndex = 10;
+            this.textBoxSourceFile.UseSystemPasswordChar = false;
             // 
             // SplitControl
             // 
@@ -123,12 +172,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelSplit);
             this.Name = "SplitControl";
-            this.Size = new System.Drawing.Size(649, 427);
+            this.Size = new System.Drawing.Size(640, 422);
             this.panelSplit.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.panelSplit.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -136,12 +182,13 @@
         #endregion
 
         private System.Windows.Forms.Panel panelSplit;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button;
-        private System.Windows.Forms.TextBox textBoxSourceFile;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button buttonBrowseDestinationFolder;
-        private System.Windows.Forms.TextBox textBoxDestinationFolder;
-        private System.Windows.Forms.Button button1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialRaisedButton buttonMerge;
+        private MaterialSkin.Controls.MaterialRaisedButton buttonBrowse;
+        private MaterialSkin.Controls.MaterialSingleLineTextField textBoxDestinationFolder;
+        private MaterialSkin.Controls.MaterialRaisedButton button;
+        private MaterialSkin.Controls.MaterialSingleLineTextField textBoxSourceFile;
     }
 }

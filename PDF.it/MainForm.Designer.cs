@@ -34,14 +34,14 @@
             this.buttonMenuSplitPDF = new System.Windows.Forms.Button();
             this.labelLogo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.mergeControl1 = new PDF.it.Controls.MergeControl();
             this.splitControl1 = new PDF.it.SplitControl();
+            this.mergeControl1 = new PDF.it.Controls.MergeControl();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(40)))), ((int)(((byte)(46)))));
             this.panelMenu.Controls.Add(this.panelMenuSelectedItem);
             this.panelMenu.Controls.Add(this.buttonMenuMergePDF);
             this.panelMenu.Controls.Add(this.buttonMenuSplitPDF);
@@ -54,7 +54,7 @@
             // 
             // panelMenuSelectedItem
             // 
-            this.panelMenuSelectedItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.panelMenuSelectedItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
             this.panelMenuSelectedItem.Location = new System.Drawing.Point(3, 142);
             this.panelMenuSelectedItem.Name = "panelMenuSelectedItem";
             this.panelMenuSelectedItem.Size = new System.Drawing.Size(8, 43);
@@ -101,19 +101,12 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(64)))), ((int)(((byte)(73)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(156, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(644, 22);
             this.panel1.TabIndex = 2;
-            // 
-            // mergeControl1
-            // 
-            this.mergeControl1.Location = new System.Drawing.Point(163, 29);
-            this.mergeControl1.Name = "mergeControl1";
-            this.mergeControl1.Size = new System.Drawing.Size(640, 422);
-            this.mergeControl1.TabIndex = 3;
             // 
             // splitControl1
             // 
@@ -121,6 +114,13 @@
             this.splitControl1.Name = "splitControl1";
             this.splitControl1.Size = new System.Drawing.Size(649, 427);
             this.splitControl1.TabIndex = 4;
+            // 
+            // mergeControl1
+            // 
+            this.mergeControl1.Location = new System.Drawing.Point(163, 29);
+            this.mergeControl1.Name = "mergeControl1";
+            this.mergeControl1.Size = new System.Drawing.Size(640, 422);
+            this.mergeControl1.TabIndex = 3;
             // 
             // MainForm
             // 

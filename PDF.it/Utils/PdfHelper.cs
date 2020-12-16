@@ -37,6 +37,10 @@ namespace PDF.it.Utils
 
         public static void MergePdf(string[] files, string outputDir)
         {
+            if (outputDir == null || outputDir == string.Empty)
+            {
+                return;
+            }
             PdfDocument outputPdf = new PdfDocument(new PdfWriter(outputDir + "mergeDocument1.pdf"));
             PdfMerger merger = new PdfMerger(outputPdf);
 
