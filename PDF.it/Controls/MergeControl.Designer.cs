@@ -30,24 +30,31 @@ namespace PDF.it.Controls
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBoxPdfToMerge = new System.Windows.Forms.ListBox();
             this.textBoxDestinationFolder = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.buttonBrowseDestinationFolder = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.buttonBrowseDestinationFolder = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.buttonMerge = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.labelDragDrop = new System.Windows.Forms.Label();
+            this.buttonAddItem = new MaterialSkin.Controls.MaterialFlatButton();
+            this.buttonClearList = new MaterialSkin.Controls.MaterialFlatButton();
             this.SuspendLayout();
             // 
-            // listBox1
+            // listBoxPdfToMerge
             // 
-            this.listBox1.AllowDrop = true;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(22, 41);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(602, 95);
-            this.listBox1.TabIndex = 1;
-            this.listBox1.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox1_DragDrop);
-            this.listBox1.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBox1_DragEnter);
+            this.listBoxPdfToMerge.AllowDrop = true;
+            this.listBoxPdfToMerge.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBoxPdfToMerge.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listBoxPdfToMerge.FormattingEnabled = true;
+            this.listBoxPdfToMerge.ItemHeight = 17;
+            this.listBoxPdfToMerge.Location = new System.Drawing.Point(22, 41);
+            this.listBoxPdfToMerge.Name = "listBoxPdfToMerge";
+            this.listBoxPdfToMerge.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.listBoxPdfToMerge.Size = new System.Drawing.Size(595, 221);
+            this.listBoxPdfToMerge.TabIndex = 1;
+            this.listBoxPdfToMerge.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBoxPdfToMerge_DragDrop);
+            this.listBoxPdfToMerge.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBoxPdfToMerge_DragEnter);
             // 
             // textBoxDestinationFolder
             // 
@@ -60,19 +67,22 @@ namespace PDF.it.Controls
             this.textBoxDestinationFolder.SelectedText = "";
             this.textBoxDestinationFolder.SelectionLength = 0;
             this.textBoxDestinationFolder.SelectionStart = 0;
-            this.textBoxDestinationFolder.Size = new System.Drawing.Size(474, 23);
+            this.textBoxDestinationFolder.Size = new System.Drawing.Size(508, 23);
             this.textBoxDestinationFolder.TabIndex = 3;
             this.textBoxDestinationFolder.UseSystemPasswordChar = false;
             // 
             // buttonBrowseDestinationFolder
             // 
+            this.buttonBrowseDestinationFolder.AutoSize = true;
+            this.buttonBrowseDestinationFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonBrowseDestinationFolder.Depth = 0;
             this.buttonBrowseDestinationFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonBrowseDestinationFolder.Location = new System.Drawing.Point(526, 335);
+            this.buttonBrowseDestinationFolder.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.buttonBrowseDestinationFolder.MouseState = MaterialSkin.MouseState.HOVER;
             this.buttonBrowseDestinationFolder.Name = "buttonBrowseDestinationFolder";
             this.buttonBrowseDestinationFolder.Primary = true;
-            this.buttonBrowseDestinationFolder.Size = new System.Drawing.Size(101, 35);
+            this.buttonBrowseDestinationFolder.Size = new System.Drawing.Size(97, 36);
             this.buttonBrowseDestinationFolder.TabIndex = 4;
             this.buttonBrowseDestinationFolder.Text = "Przeglądaj";
             this.buttonBrowseDestinationFolder.UseVisualStyleBackColor = true;
@@ -117,16 +127,62 @@ namespace PDF.it.Controls
             this.buttonMerge.UseVisualStyleBackColor = true;
             this.buttonMerge.Click += new System.EventHandler(this.buttonMerge_Click);
             // 
+            // labelDragDrop
+            // 
+            this.labelDragDrop.AutoSize = true;
+            this.labelDragDrop.BackColor = System.Drawing.Color.White;
+            this.labelDragDrop.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelDragDrop.Location = new System.Drawing.Point(148, 135);
+            this.labelDragDrop.Name = "labelDragDrop";
+            this.labelDragDrop.Size = new System.Drawing.Size(337, 20);
+            this.labelDragDrop.TabIndex = 7;
+            this.labelDragDrop.Text = "Przeciągnij i upuść pliki, które chcesz połaczyć";
+            // 
+            // buttonAddItem
+            // 
+            this.buttonAddItem.AutoSize = true;
+            this.buttonAddItem.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonAddItem.Depth = 0;
+            this.buttonAddItem.Location = new System.Drawing.Point(477, 3);
+            this.buttonAddItem.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.buttonAddItem.MouseState = MaterialSkin.MouseState.HOVER;
+            this.buttonAddItem.Name = "buttonAddItem";
+            this.buttonAddItem.Primary = false;
+            this.buttonAddItem.Size = new System.Drawing.Size(56, 36);
+            this.buttonAddItem.TabIndex = 8;
+            this.buttonAddItem.Text = "Dodaj";
+            this.buttonAddItem.UseVisualStyleBackColor = true;
+            this.buttonAddItem.Click += new System.EventHandler(this.buttonAddItem_Click);
+            // 
+            // buttonClearList
+            // 
+            this.buttonClearList.AutoSize = true;
+            this.buttonClearList.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonClearList.Depth = 0;
+            this.buttonClearList.Location = new System.Drawing.Point(541, 3);
+            this.buttonClearList.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.buttonClearList.MouseState = MaterialSkin.MouseState.HOVER;
+            this.buttonClearList.Name = "buttonClearList";
+            this.buttonClearList.Primary = false;
+            this.buttonClearList.Size = new System.Drawing.Size(75, 36);
+            this.buttonClearList.TabIndex = 9;
+            this.buttonClearList.Text = "Wyczyść";
+            this.buttonClearList.UseVisualStyleBackColor = true;
+            this.buttonClearList.Click += new System.EventHandler(this.buttonClearList_Click);
+            // 
             // MergeControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonClearList);
+            this.Controls.Add(this.buttonAddItem);
+            this.Controls.Add(this.labelDragDrop);
             this.Controls.Add(this.buttonMerge);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.buttonBrowseDestinationFolder);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.textBoxDestinationFolder);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listBoxPdfToMerge);
             this.Name = "MergeControl";
             this.Size = new System.Drawing.Size(640, 422);
             this.ResumeLayout(false);
@@ -135,11 +191,14 @@ namespace PDF.it.Controls
         }
 
         #endregion
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBoxPdfToMerge;
         private MaterialSingleLineTextField textBoxDestinationFolder;
-        private MaterialRaisedButton buttonBrowseDestinationFolder;
+        private MaterialFlatButton buttonBrowseDestinationFolder;
         private MaterialLabel materialLabel1;
         private MaterialLabel materialLabel2;
         private MaterialRaisedButton buttonMerge;
+        private System.Windows.Forms.Label labelDragDrop;
+        private MaterialFlatButton buttonAddItem;
+        private MaterialFlatButton buttonClearList;
     }
 }
