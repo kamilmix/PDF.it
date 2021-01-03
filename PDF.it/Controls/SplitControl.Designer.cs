@@ -29,19 +29,22 @@
         private void InitializeComponent()
         {
             this.panelSplit = new System.Windows.Forms.Panel();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.buttonMerge = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.buttonBrowse = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.textBoxDestinationFolder = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.button = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.button = new MaterialSkin.Controls.MaterialFlatButton();
             this.textBoxSourceFile = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.buttonMerge = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.buttonBrowse = new MaterialSkin.Controls.MaterialFlatButton();
+            this.textBoxDestinationFolder = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.labelDragDrop = new System.Windows.Forms.Label();
             this.panelSplit.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSplit
             // 
+            this.panelSplit.AllowDrop = true;
+            this.panelSplit.Controls.Add(this.labelDragDrop);
             this.panelSplit.Controls.Add(this.button);
             this.panelSplit.Controls.Add(this.textBoxSourceFile);
             this.panelSplit.Controls.Add(this.buttonMerge);
@@ -55,45 +58,42 @@
             this.panelSplit.Name = "panelSplit";
             this.panelSplit.Size = new System.Drawing.Size(640, 422);
             this.panelSplit.TabIndex = 4;
+            this.panelSplit.DragDrop += new System.Windows.Forms.DragEventHandler(this.textBoxSourceFile_DragDrop);
+            this.panelSplit.DragEnter += new System.Windows.Forms.DragEventHandler(this.textBoxSourceFile_DragEnter);
             // 
-            // materialLabel1
+            // button
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(21, 9);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(89, 19);
-            this.materialLabel1.TabIndex = 4;
-            this.materialLabel1.Text = "Podziel PDF";
+            this.button.AutoSize = true;
+            this.button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button.Depth = 0;
+            this.button.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button.Location = new System.Drawing.Point(526, 194);
+            this.button.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.button.MouseState = MaterialSkin.MouseState.HOVER;
+            this.button.Name = "button";
+            this.button.Primary = true;
+            this.button.Size = new System.Drawing.Size(97, 36);
+            this.button.TabIndex = 11;
+            this.button.Text = "Przeglądaj";
+            this.button.UseVisualStyleBackColor = true;
+            this.button.Click += new System.EventHandler(this.button_Click);
             // 
-            // materialLabel2
+            // textBoxSourceFile
             // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(18, 178);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(89, 19);
-            this.materialLabel2.TabIndex = 5;
-            this.materialLabel2.Text = "Wybierz plik";
-            // 
-            // materialLabel3
-            // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(18, 319);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(128, 19);
-            this.materialLabel3.TabIndex = 6;
-            this.materialLabel3.Text = "Katalog docelowy";
+            this.textBoxSourceFile.Depth = 0;
+            this.textBoxSourceFile.Hint = "C:\\";
+            this.textBoxSourceFile.Location = new System.Drawing.Point(25, 200);
+            this.textBoxSourceFile.MouseState = MaterialSkin.MouseState.HOVER;
+            this.textBoxSourceFile.Name = "textBoxSourceFile";
+            this.textBoxSourceFile.PasswordChar = '\0';
+            this.textBoxSourceFile.SelectedText = "";
+            this.textBoxSourceFile.SelectionLength = 0;
+            this.textBoxSourceFile.SelectionStart = 0;
+            this.textBoxSourceFile.Size = new System.Drawing.Size(474, 23);
+            this.textBoxSourceFile.TabIndex = 10;
+            this.textBoxSourceFile.UseSystemPasswordChar = false;
+            this.textBoxSourceFile.DragDrop += new System.Windows.Forms.DragEventHandler(this.textBoxSourceFile_DragDrop);
+            this.textBoxSourceFile.DragEnter += new System.Windows.Forms.DragEventHandler(this.textBoxSourceFile_DragEnter);
             // 
             // buttonMerge
             // 
@@ -110,13 +110,16 @@
             // 
             // buttonBrowse
             // 
+            this.buttonBrowse.AutoSize = true;
+            this.buttonBrowse.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonBrowse.Depth = 0;
             this.buttonBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonBrowse.Location = new System.Drawing.Point(526, 335);
+            this.buttonBrowse.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.buttonBrowse.MouseState = MaterialSkin.MouseState.HOVER;
             this.buttonBrowse.Name = "buttonBrowse";
             this.buttonBrowse.Primary = true;
-            this.buttonBrowse.Size = new System.Drawing.Size(101, 35);
+            this.buttonBrowse.Size = new System.Drawing.Size(97, 36);
             this.buttonBrowse.TabIndex = 8;
             this.buttonBrowse.Text = "Przeglądaj";
             this.buttonBrowse.UseVisualStyleBackColor = true;
@@ -137,34 +140,55 @@
             this.textBoxDestinationFolder.TabIndex = 7;
             this.textBoxDestinationFolder.UseSystemPasswordChar = false;
             // 
-            // button
+            // materialLabel3
             // 
-            this.button.Depth = 0;
-            this.button.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button.Location = new System.Drawing.Point(526, 194);
-            this.button.MouseState = MaterialSkin.MouseState.HOVER;
-            this.button.Name = "button";
-            this.button.Primary = true;
-            this.button.Size = new System.Drawing.Size(101, 35);
-            this.button.TabIndex = 11;
-            this.button.Text = "Przeglądaj";
-            this.button.UseVisualStyleBackColor = true;
-            this.button.Click += new System.EventHandler(this.button_Click);
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(18, 319);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(128, 19);
+            this.materialLabel3.TabIndex = 6;
+            this.materialLabel3.Text = "Katalog docelowy";
             // 
-            // textBoxSourceFile
+            // materialLabel2
             // 
-            this.textBoxSourceFile.Depth = 0;
-            this.textBoxSourceFile.Hint = "C:\\";
-            this.textBoxSourceFile.Location = new System.Drawing.Point(25, 200);
-            this.textBoxSourceFile.MouseState = MaterialSkin.MouseState.HOVER;
-            this.textBoxSourceFile.Name = "textBoxSourceFile";
-            this.textBoxSourceFile.PasswordChar = '\0';
-            this.textBoxSourceFile.SelectedText = "";
-            this.textBoxSourceFile.SelectionLength = 0;
-            this.textBoxSourceFile.SelectionStart = 0;
-            this.textBoxSourceFile.Size = new System.Drawing.Size(474, 23);
-            this.textBoxSourceFile.TabIndex = 10;
-            this.textBoxSourceFile.UseSystemPasswordChar = false;
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(18, 178);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(89, 19);
+            this.materialLabel2.TabIndex = 5;
+            this.materialLabel2.Text = "Wybierz plik";
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(21, 9);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(234, 19);
+            this.materialLabel1.TabIndex = 4;
+            this.materialLabel1.Text = "Podziel PDF na pojedyncze strony";
+            // 
+            // labelDragDrop
+            // 
+            this.labelDragDrop.AutoSize = true;
+            this.labelDragDrop.BackColor = System.Drawing.Color.Transparent;
+            this.labelDragDrop.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelDragDrop.Location = new System.Drawing.Point(149, 90);
+            this.labelDragDrop.Name = "labelDragDrop";
+            this.labelDragDrop.Size = new System.Drawing.Size(333, 20);
+            this.labelDragDrop.TabIndex = 12;
+            this.labelDragDrop.Text = "Przeciągnij i upuść plik, który chcesz podzielić";
             // 
             // SplitControl
             // 
@@ -186,9 +210,10 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialRaisedButton buttonMerge;
-        private MaterialSkin.Controls.MaterialRaisedButton buttonBrowse;
+        private MaterialSkin.Controls.MaterialFlatButton buttonBrowse;
         private MaterialSkin.Controls.MaterialSingleLineTextField textBoxDestinationFolder;
-        private MaterialSkin.Controls.MaterialRaisedButton button;
+        private MaterialSkin.Controls.MaterialFlatButton button;
         private MaterialSkin.Controls.MaterialSingleLineTextField textBoxSourceFile;
+        private System.Windows.Forms.Label labelDragDrop;
     }
 }

@@ -41,6 +41,11 @@ namespace PDF.it.Utils
             {
                 return;
             }
+
+            if (files.Length < 1)
+            {
+                return;
+            }
             PdfDocument outputPdf = new PdfDocument(new PdfWriter(outputDir + "mergeDocument1.pdf"));
             PdfMerger merger = new PdfMerger(outputPdf);
 

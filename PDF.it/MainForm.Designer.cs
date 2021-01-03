@@ -95,17 +95,17 @@
             this.labelLogo.ForeColor = System.Drawing.Color.White;
             this.labelLogo.Location = new System.Drawing.Point(12, 9);
             this.labelLogo.Name = "labelLogo";
-            this.labelLogo.Size = new System.Drawing.Size(105, 38);
+            this.labelLogo.Size = new System.Drawing.Size(102, 39);
             this.labelLogo.TabIndex = 0;
             this.labelLogo.Text = "PDF.it";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(64)))), ((int)(((byte)(73)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(125)))), ((int)(((byte)(139)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(156, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(644, 22);
+            this.panel1.Size = new System.Drawing.Size(644, 23);
             this.panel1.TabIndex = 2;
             // 
             // splitControl1

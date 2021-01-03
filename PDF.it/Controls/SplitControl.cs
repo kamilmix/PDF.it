@@ -16,6 +16,7 @@ namespace PDF.it
         public SplitControl()
         {
             InitializeComponent();
+            textBoxDestinationFolder.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -33,6 +34,20 @@ namespace PDF.it
         {
             var filePath = FileHelper.GetFile();
             textBoxSourceFile.Text = filePath;
+        }
+
+        private void textBoxSourceFile_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+        }
+
+        private void textBoxSourceFile_DragDrop(object sender, DragEventArgs e)
+        {
+            var files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            textBoxSourceFile.Text = files[0];
         }
     }
 }

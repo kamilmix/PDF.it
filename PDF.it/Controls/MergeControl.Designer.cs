@@ -44,14 +44,14 @@ namespace PDF.it.Controls
             // listBoxPdfToMerge
             // 
             this.listBoxPdfToMerge.AllowDrop = true;
-            this.listBoxPdfToMerge.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBoxPdfToMerge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listBoxPdfToMerge.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.listBoxPdfToMerge.FormattingEnabled = true;
             this.listBoxPdfToMerge.ItemHeight = 17;
             this.listBoxPdfToMerge.Location = new System.Drawing.Point(22, 41);
             this.listBoxPdfToMerge.Name = "listBoxPdfToMerge";
             this.listBoxPdfToMerge.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.listBoxPdfToMerge.Size = new System.Drawing.Size(595, 221);
+            this.listBoxPdfToMerge.Size = new System.Drawing.Size(595, 206);
             this.listBoxPdfToMerge.TabIndex = 1;
             this.listBoxPdfToMerge.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBoxPdfToMerge_DragDrop);
             this.listBoxPdfToMerge.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBoxPdfToMerge_DragEnter);
