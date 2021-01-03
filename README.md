@@ -1,4 +1,4 @@
-﻿# PDF. IT
+﻿# PDF. it
 
 ![GUI](https://github.com/kamilmix/PDF.it/blob/master/PDF.it/Images/gui.JPG "GUI")
 
